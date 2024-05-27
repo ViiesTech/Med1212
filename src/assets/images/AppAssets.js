@@ -11,5 +11,9 @@ export const images = {
     day3: require('./day3.png'),
     switch1: require('./switch1.png'),
     switch2: require('./switch2.png'),
-    medImage: require('./medImage.png')
+    medImage: require('./medImage.png'),
+    background: require('./backgroundImage.png'),
+    image1: require('./image1.png'),
+    image2: require('./image2.png'),
+    image3: require('./image3.png'),
 }

@@ -11,7 +11,7 @@ const Workout = ({ navigation }) => {
         <View style={{ flex: 1, backgroundColor: Colors.backgroundColor }}>
 
 
-            <Header navigation={navigation} isChat={false}  text={'Workout for your Days'} />
+            <Header navigation={navigation} isChat={false} text={'Workout for your Days'} />
 
             <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ padding: 20, gap: 10, flexGrow: 1 }}>
                 <View style={{ backgroundColor: Colors.white, borderRadius: 10, }}>
@@ -121,6 +121,7 @@ export default Workout;
 
 const styles = StyleSheet.create({
     textFont: {
+        color: '#000000',
         bottom: 3
     }
 });

@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity, Image } from 'react-native'
+import { View, Text, TouchableOpacity, Image, ScrollView } from 'react-native'
 import React from 'react'
 import { Colors } from '../../assets/utils/Colors'
 import Header from '../../component/Header'
@@ -7,94 +7,71 @@ import AntDesign from 'react-native-vector-icons/AntDesign'
 
 const SelectService = ({ navigation }) => {
   return (
-    <View style={{ flex: 1, backgroundColor: '#E6E9FF' }}>
+    <ScrollView contentContainerStyle={{ flexGrow: 1, backgroundColor: '#E6E9FF', paddingBottom: 20 }} showsVerticalScrollIndicator={false}>
 
-      <Header navigation={navigation} isChat={false} text={'Hey Brian,'}  />
+      <Header navigation={navigation} isChat={false} text={'Hey Brian,'} />
       <View style={{ alignItems: 'center', marginTop: 40 }}>
         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-          <Text style={{ fontSize: 30, fontWeight: 'bold' }}>Proceed </Text>
-          <Text style={{ fontSize: 30, }}>With The </Text>
+          <Text style={{ fontSize: 30, fontWeight: 'bold', color: Colors.textColor }}>Proceed </Text>
+          <Text style={{ fontSize: 30, color: Colors.textColor }}>With The </Text>
         </View>
         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-          <Text style={{ fontSize: 30, fontWeight: 'bold' }}>Service</Text>
-          <Text style={{ fontSize: 30, }}> You <Text style={{ fontSize: 30, fontWeight: 'bold' }}>Want </Text></Text>
+          <Text style={{ fontSize: 30, fontWeight: 'bold', color: Colors.textColor }}>Service</Text>
+          <Text style={{ fontSize: 30, color: Colors.textColor }}> You <Text style={{ fontSize: 30, fontWeight: 'bold', color: Colors.textColor }}>Want! </Text></Text>
         </View>
       </View>
       <View style={{ paddingHorizontal: 20 }}>
-        <TouchableOpacity onPress={() => navigation.navigate('about')} style={{ backgroundColor: 'white', flexDirection: 'row', marginTop: 20, justifyContent: 'space-between', borderRadius: 15, }}>
-          <View style={{ flexDirection: 'row', alignItems: 'center', gap: 10, height: 100 }}>
-            <View style={{ justifyContent: 'center', alignItems: 'center', backgroundColor: '#E6E9FF', marginLeft: 10, height: 60, width: 60, borderRadius: 35, padding: 10 }}>
-              <Image source={images.hormone} style={{ height: '100%', width: '100%' }} resizeMode='contain' />
-            </View>
+        <TouchableOpacity onPress={() => navigation.navigate('about')} style={{ backgroundColor: 'white', marginTop: 20, justifyContent: 'space-between', borderRadius: 5, }}>
+          <Image source={images.image1} style={{ width: '100%', borderTopLeftRadius: 5, borderTopRightRadius: 5 }} />
+          <View style={{ flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 12, paddingVertical: 20 }}>
             <View>
-              <Text style={{ fontWeight: 600, fontSize: 16, bottom: 5 }}>Hormone Replacement</Text>
+              <Text style={{ fontWeight: 600, fontSize: 16, bottom: 5, color: Colors.themeColor }}>Hormone Replacement</Text>
               <View>
-                <Text>It is a long established fact </Text>
-                <Text>that a reader will be distracted. </Text>
+                <Text style={{ color: '#000000' }}>It is a long established fact </Text>
+                <Text style={{ color: '#000000' }}>that a reader will be distracted. </Text>
               </View>
             </View>
-          </View>
-          <View style={{ backgroundColor: '#171E5B', width: 40, alignItems: 'center', justifyContent: 'center', borderTopRightRadius: 15, borderBottomRightRadius: 15, }}>
-            <AntDesign color='white' name='right' size={25} />
+            <View style={{ backgroundColor: '#171E5B', width: 30, alignItems: 'center', justifyContent: 'center', borderRadius: 25 }}>
+              <AntDesign color='white' name='right' size={25} />
 
+            </View>
           </View>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation.navigate('about')} style={{ backgroundColor: 'white', flexDirection: 'row', marginTop: 20, justifyContent: 'space-between', borderRadius: 15, }}>
-          <View style={{ flexDirection: 'row', alignItems: 'center', gap: 10, height: 100 }}>
-            <View style={{ justifyContent: 'center', alignItems: 'center', backgroundColor: '#E6E9FF', height: 60, width: 60, padding: 10, marginLeft: 10, borderRadius: 35 }}>
-              <Image source={images.weight} style={{ height: '100%', width: '100%' }} resizeMode='contain' />
-            </View>
+        <TouchableOpacity onPress={() => navigation.navigate('about')} style={{ backgroundColor: 'white', marginTop: 20, justifyContent: 'space-between', borderRadius: 5, }}>
+          <Image source={images.image2} style={{ width: '100%', borderTopLeftRadius: 5, borderTopRightRadius: 5 }} />
+          <View style={{ flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 12, paddingVertical: 20 }}>
             <View>
-              <Text style={{ fontWeight: 600, fontSize: 16, bottom: 5 }}>Weight Loss</Text>
+              <Text style={{ fontWeight: 600, fontSize: 16, bottom: 5, color: Colors.themeColor }}>Weight Loss</Text>
               <View>
-                <Text>It is a long established fact </Text>
-                <Text>that a reader will be distracted. </Text>
+                <Text style={{ color: '#000000' }}>It is a long established fact </Text>
+                <Text style={{ color: '#000000' }}>that a reader will be distracted. </Text>
               </View>
             </View>
-          </View>
-          <View style={{ backgroundColor: '#171E5B', width: 40, alignItems: 'center', justifyContent: 'center', borderTopRightRadius: 15, borderBottomRightRadius: 15 }}>
-            <AntDesign color='white' name='right' size={25} />
+            <View style={{ backgroundColor: '#171E5B', width: 30, alignItems: 'center', justifyContent: 'center', borderRadius: 25 }}>
+              <AntDesign color='white' name='right' size={25} />
 
+            </View>
           </View>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation.navigate('about')} style={{ backgroundColor: 'white', flexDirection: 'row', marginTop: 20, justifyContent: 'space-between', borderRadius: 15, }}>
-          <View style={{ flexDirection: 'row', height: 100, alignItems: 'center', gap: 10 }}>
-            <View style={{ justifyContent: 'center', alignItems: 'center', padding: 10, marginLeft: 10, backgroundColor: '#E6E9FF', height: 60, width: 60, borderRadius: 35 }}>
-              <Image source={images.health} style={{ height: '100%', width: '100%' }} resizeMode='contain' />
-            </View>
+        <TouchableOpacity onPress={() => navigation.navigate('about')} style={{ backgroundColor: 'white', marginTop: 20, justifyContent: 'space-between', borderRadius: 5, }}>
+          <Image source={images.image3} style={{ width: '100%', borderTopLeftRadius: 5, borderTopRightRadius: 5 }} />
+          <View style={{ flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 12, paddingVertical: 20 }}>
             <View>
-              <Text style={{ fontWeight: 600, fontSize: 16, bottom: 5 }}>Health Optimization</Text>
+              <Text style={{ fontWeight: 600, fontSize: 16, bottom: 5, color: Colors.themeColor }}>Health Optimization                                </Text>
               <View>
-                <Text>It is a long established fact </Text>
-                <Text>that a reader will be distracted. </Text>
+                <Text style={{ color: '#000000' }}>It is a long established fact </Text>
+                <Text style={{ color: '#000000' }}>that a reader will be distracted. </Text>
               </View>
             </View>
-          </View>
-          <View style={{ backgroundColor: '#171E5B', width: 40, alignItems: 'center', justifyContent: 'center', borderTopRightRadius: 15, borderBottomRightRadius: 15 }}>
-            <AntDesign color='white' name='right' size={25} />
+            <View style={{ backgroundColor: '#171E5B', width: 30, alignItems: 'center', justifyContent: 'center', borderRadius: 25 }}>
+              <AntDesign color='white' name='right' size={25} />
 
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation.navigate('about')} style={{ backgroundColor: 'white', flexDirection: 'row', marginTop: 20, justifyContent: 'space-between', borderRadius: 15, }}>
-          <View style={{ flexDirection: 'row', height:100, alignItems: 'center', gap: 10 }}>
-            <View style={{ justifyContent: 'center', alignItems: 'center', backgroundColor: '#E6E9FF', height: 60, width: 60, borderRadius: 35,padding:10 ,marginLeft:10}}>
-              <Image source={images.antiaging} style={{height:'100%',width:'100%'}} resizeMode='contain' />
-            </View>
-            <View>
-              <Text style={{ fontWeight: 600, fontSize: 16, bottom: 5 }}>Antiaging  </Text>
-              <View>
-                <Text>It is a long established fact </Text>
-                <Text>that a reader will be distracted. </Text>
-              </View>
             </View>
           </View>
-          <View style={{ backgroundColor: '#171E5B', width: 40, alignItems: 'center', justifyContent: 'center', borderTopRightRadius: 15, borderBottomRightRadius: 15 }}>
-            <AntDesign color='white' name='right' size={25} />
-
-          </View>
         </TouchableOpacity>
+
       </View>
-    </View>
+    </ScrollView>
   )
 }
 

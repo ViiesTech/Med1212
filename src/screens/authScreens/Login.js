@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity, StyleSheet, Image, ScrollView } from 'react-native'
+import { View, Text, TouchableOpacity, StyleSheet, Image, ScrollView, ImageBackground } from 'react-native'
 import React, { useState } from 'react'
 import AntDesign from 'react-native-vector-icons/AntDesign'
 import Entypo from 'react-native-vector-icons/Entypo'
@@ -9,12 +9,12 @@ const Login = ({ navigation }) => {
 
     return (
 
-
+       <ImageBackground style={{flex:1}} source={images.background}>
         <ScrollView contentContainerStyle={{ flexGrow: 1, }}>
             <View style={{padding: 20,}}>
 
                 <TouchableOpacity onPress={() => navigation.goBack()} style={{  alignSelf: 'flex-start',marginTop:5  }}>
-                    <AntDesign name='arrowleft' color={Colors.buttonBgColor} size={25} />
+                    <AntDesign name='arrowleft' color={Colors.black} size={25} />
                 </TouchableOpacity>
             </View>
             <View style={{ alignItems: 'center', justifyContent: 'flex-end', marginBottom: 10, }}>
@@ -52,6 +52,7 @@ const Login = ({ navigation }) => {
                 </View>
             </View>
         </ScrollView>
+        </ImageBackground>
     )
 }
 

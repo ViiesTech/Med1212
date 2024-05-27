@@ -35,8 +35,8 @@ const Appointment = ({ navigation }) => {
         borderRadius: 5,
       }}
     >
-      <Text style={{ color: selectedDay === day ? 'white' : Colors.buttonBgColor, fontWeight: 'bold' }}>{label}</Text>
-      <Text style={{ color: selectedDay === day ? 'white' : Colors.buttonBgColor, fontWeight: 600 }}>{day}</Text>
+      <Text style={{ color: selectedDay === day ? 'white' : '#363636', fontWeight: 'bold' }}>{label}</Text>
+      <Text style={{ color: selectedDay === day ? 'white' : '#363636', fontWeight: 600 }}>{day}</Text>
     </TouchableOpacity>
   );
 
@@ -84,7 +84,7 @@ const Appointment = ({ navigation }) => {
   return (
     <View style={{ backgroundColor: Colors.backgroundColor, flex: 1 }}>
 
-      <Header navigation={navigation} isChat={true}  text={'Make Appointment'} />
+      <Header navigation={navigation} isChat={true} text={'Make Appointment'} />
 
       <View style={{ padding: 20 }}>
         <Text style={{ color: '#363636', fontSize: 18, fontWeight: 'bold' }}>April 2020</Text>

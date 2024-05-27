@@ -3,5 +3,6 @@ export const Colors = {
     backgroundColor: '#E6E9FF',
     buttonBgColor: '#171E5B',
     white: '#fff',
-    black: '#000'
+    black: '#000',
+    textColor: '#181E5B'
 }

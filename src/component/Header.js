@@ -17,14 +17,33 @@ const Header = ({ navigation, text, margin, padding, isChat }) => {
                 <View style={{ flexDirection: 'row', gap: 10, }}>
                     {isChat ?
                         (
-                            <TouchableOpacity style={{ height: 40, width: 40, borderColor: '#07113D', borderWidth: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'white', borderRadius: 20 }}>
+                            <TouchableOpacity style={{
+                                shadowColor: "#000",
+                                shadowOffset: {
+                                    width: 0,
+                                    height: 2,
+                                },
+                                shadowOpacity: 0.25,
+                                shadowRadius: 3.84,
+                                elevation: 5, height: 40, width: 40, borderColor: '#07113D', borderWidth: 1.2, justifyContent: 'center', alignItems: 'center', backgroundColor: 'white', borderRadius: 20
+                            }}>
                                 <AntDesign name='message1' size={20} />
                             </TouchableOpacity>
                         ) :
                         null
                     }
 
-                    <TouchableOpacity style={{ height: 40, width: 40, borderColor: '#07113D', borderWidth: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'white', borderRadius: 20 }}>
+                    <TouchableOpacity style={{
+                        shadowColor: "#000",
+                        shadowOffset: {
+                            width: 0,
+                            height: 2,
+                        },
+                        shadowOpacity: 0.25,
+                        shadowRadius: 3.84,
+
+                        elevation: 5, height: 40, width: 40, borderColor: '#07113D', borderWidth: 1.2, justifyContent: 'center', alignItems: 'center', backgroundColor: 'white', borderRadius: 20
+                    }}>
                         <Feather name='user' size={20} />
                     </TouchableOpacity>
                 </View>

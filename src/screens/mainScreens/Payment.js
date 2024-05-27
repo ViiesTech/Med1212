@@ -15,7 +15,7 @@ const Payment = ({ navigation }) => {
       </TouchableOpacity>
       <View style={{ marginTop: 20, }}>
         <View style={{ backgroundColor: Colors.white, padding: 20, justifyContent: 'center', borderRadius: 10 }}>
-          <Text style={{ alignSelf: 'flex-start', fontSize: 20, fontWeight: 'bold', color: Colors.themeColor }}>Make Your Payment</Text>
+          <Text style={{ alignSelf: 'flex-start', fontSize: 20, fontWeight: 'bold', color: Colors.buttonBgColor }}>Make Your Payment</Text>
           <View style={{ flexDirection: 'row', gap: 10, alignSelf: 'center' }}>
             <View style={{ width: '50%' }}>
               <Text style={{ marginTop: 30, marginBottom: 10, color: Colors.themeColor }}>Current credit card</Text>
