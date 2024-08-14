@@ -17,7 +17,7 @@ const Header = ({ navigation, text, margin, padding, isChat }) => {
                 <View style={{ flexDirection: 'row', gap: 10, }}>
                     {isChat ?
                         (
-                            <TouchableOpacity style={{
+                            <TouchableOpacity onPress={()=>navigation.navigate('chat')} style={{
                                 shadowColor: "#000",
                                 shadowOffset: {
                                     width: 0,

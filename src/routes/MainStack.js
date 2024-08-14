@@ -6,6 +6,7 @@ import Appointment from '../screens/mainScreens/Appointment';
 import Payment from '../screens/mainScreens/Payment';
 import DietSleep from '../screens/mainScreens/DietSleep';
 import Workout from '../screens/mainScreens/Workout';
+import Chat from '../screens/mainScreens/Chat';
 
 
 const Stack = createStackNavigator();
@@ -20,6 +21,7 @@ function MainStack() {
             <Stack.Screen name="payment" component={Payment} />
             <Stack.Screen name="dietSleep" component={DietSleep} />
             <Stack.Screen name="workout" component={Workout} />
+            <Stack.Screen name="chat" component={Chat} />
         </Stack.Navigator>
     );
 }

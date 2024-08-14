@@ -47,7 +47,7 @@ const GetStarted = ({ navigation }) => {
                 if (releaseX >= 260) {
 
                     console.log('releasex', releaseX)
-                    navigation.navigate('login')
+                    navigation.navigate('socialLogin')
                 }
                 console.log('coordinates', iconCoordinates)
 
@@ -83,7 +83,7 @@ const GetStarted = ({ navigation }) => {
 
                         <TouchableOpacity
                             ref={iconRef}
-                            onPress={() => navigation.navigate('login')}
+                            onPress={() => navigation.navigate('socialLogin')}
                             onLayout={handleLayout}
                             style={{ backgroundColor: Colors.buttonBgColor, zIndex: 10, width: 65, height: '100%', alignItems: 'center', justifyContent: 'center',borderRadius:100,left:3 }}
                         >
