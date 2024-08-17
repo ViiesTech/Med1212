@@ -28,21 +28,21 @@ const Chat = ({navigation}) => {
       text: 'You’ve got to hear this! Something amazing just happened, and I had to tell you right away',
       myText: false,
     },
-    {
-      id: 5,
-      text: 'You wont believe the news I have for you! Lets chat soon!',
-      myText: true,
-    },
-    {
-      id: 6,
-      text: 'You wont believe the news I have for you! Lets chat soon!',
-      myText: false,
-    },
-    {
-      id: 7,
-      text: 'You wont believe the news I have for you! Lets chat soon!',
-      myText: true,
-    },
+    // {
+    //   id: 5,
+    //   text: 'You wont believe the news I have for you! Lets chat soon!',
+    //   myText: true,
+    // },
+    // {
+    //   id: 6,
+    //   text: 'You wont believe the news I have for you! Lets chat soon!',
+    //   myText: false,
+    // },
+    // {
+    //   id: 7,
+    //   text: 'You wont believe the news I have for you! Lets chat soon!',
+    //   myText: true,
+    // },
   ];
 
   const renderItem = ({item}) => {

@@ -34,7 +34,7 @@ const Signup = ({navigation}) => {
   console.log(form.name, form.email, form.password, form.confirmPassword);
 
   const handleRegisteration = async () => {
-    navigation.navigate('mainStack')
+    navigation.navigate('mainStack');
     // setIsLoading(true)
     // try {
     //   const response = await emailAuthentication(form.email, form.password);
@@ -46,7 +46,7 @@ const Signup = ({navigation}) => {
   };
   return (
     <ImageBackground style={{flex: 1}} source={images.background}>
-      <ScrollView contentContainerStyle={{flexGrow: 1}}>
+      <View style={{flex: 1,}}>
         <View style={{padding: 20}}>
           <TouchableOpacity
             onPress={() => navigation.goBack()}
@@ -64,7 +64,6 @@ const Signup = ({navigation}) => {
             <Image source={images.logo} />
           </View>
         </View>
-
         <View
           style={{
             flex: 1,
@@ -72,65 +71,40 @@ const Signup = ({navigation}) => {
             borderTopLeftRadius: 50,
             borderTopRightRadius: 50,
             marginTop: 30,
+            paddingTop:10
+            // paddingBottom: 10,
           }}>
-          <View style={{width: '100%', padding: 20, alignItems: 'center'}}>
-            <Text style={{marginTop: 20, fontSize: 14}}>
-              MEDICAL AND GENERAL CARE
-            </Text>
-            <Text style={{color: '#181E5B', fontSize: 30, marginTop: 10}}>
-              Be{' '}
-              <Text
-                style={{color: '#181E5B', fontSize: 30, fontWeight: 'bold'}}>
-                {' '}
-                Wealthy
+          <ScrollView
+          contentContainerStyle={{ borderTopLeftRadius: 50,
+            borderTopRightRadius: 50,paddingBottom:10}}
+            showsVerticalScrollIndicator={false}
+           >
+            <View style={{width: '100%', padding: 20, alignItems: 'center'}}>
+              <Text style={{marginTop: 20, fontSize: 14}}>
+                MEDICAL AND GENERAL CARE
               </Text>
-            </Text>
-            <Text style={{color: '#181E5B', fontSize: 30, marginTop: 10}}>
-              By being{' '}
-              <Text
-                style={{color: '#181E5B', fontSize: 30, fontWeight: 'bold'}}>
-                {' '}
-                Healthy
+              <Text style={{color: '#181E5B', fontSize: 30, marginTop: 10}}>
+                Be{' '}
+                <Text
+                  style={{color: '#181E5B', fontSize: 30, fontWeight: 'bold'}}>
+                  {' '}
+                  Wealthy
+                </Text>
               </Text>
-            </Text>
-          </View>
-          <View style={{padding: 20, gap: 10}}>
-            <TextInput
-              placeholderTextColor={Colors.black}
-              onChangeText={changedText => onChangeText(changedText, 'name')}
-              placeholder="Full Name"
-              style={{
-                height: 50,
-                width: '100%',
-                borderRadius: 5,
-                padding: 10,
-                borderWidth: 1,
-                borderColor: 'black',
-              }}
-            />
-            <TextInput
-              placeholderTextColor={Colors.black}
-              placeholder="Email Address"
-              onChangeText={changedText => onChangeText(changedText, 'email')}
-              keyboardType="email-address"
-              style={{
-                height: 50,
-                width: '100%',
-                borderRadius: 5,
-                padding: 10,
-                borderWidth: 1,
-                borderColor: 'black',
-              }}
-            />
-
-            <View>
+              <Text style={{color: '#181E5B', fontSize: 30, marginTop: 10}}>
+                By being{' '}
+                <Text
+                  style={{color: '#181E5B', fontSize: 30, fontWeight: 'bold'}}>
+                  {' '}
+                  Healthy
+                </Text>
+              </Text>
+            </View>
+            <View style={{padding: 20, gap: 10}}>
               <TextInput
-                secureTextEntry={showPassword}
                 placeholderTextColor={Colors.black}
-                onChangeText={changedText =>
-                  onChangeText(changedText, 'password')
-                }
-                placeholder="Password"
+                onChangeText={changedText => onChangeText(changedText, 'name')}
+                placeholder="Full Name"
                 style={{
                   height: 50,
                   width: '100%',
@@ -140,29 +114,11 @@ const Signup = ({navigation}) => {
                   borderColor: 'black',
                 }}
               />
-              <TouchableOpacity
-                onPress={() => setShowPassword(!showPassword)}
-                style={{
-                  position: 'absolute',
-                  right: 10,
-                  height: '100%',
-                  justifyContent: 'center',
-                }}>
-                <Entypo
-                  name={showPassword ? 'eye-with-line' : 'eye'}
-                  size={25}
-                  color={Colors.black}
-                />
-              </TouchableOpacity>
-            </View>
-            <View>
               <TextInput
-                secureTextEntry={showConfirmPassword}
                 placeholderTextColor={Colors.black}
-                onChangeText={changedText =>
-                  onChangeText(changedText, 'confirmPassword')
-                }
-                placeholder="Confirm Password"
+                placeholder="Email Address"
+                onChangeText={changedText => onChangeText(changedText, 'email')}
+                keyboardType="email-address"
                 style={{
                   height: 50,
                   width: '100%',
@@ -172,60 +128,113 @@ const Signup = ({navigation}) => {
                   borderColor: 'black',
                 }}
               />
-              <TouchableOpacity
-                onPress={() => setShowConfirmPassword(!showConfirmPassword)}
-                style={{
-                  position: 'absolute',
-                  right: 10,
-                  height: '100%',
-                  justifyContent: 'center',
-                }}>
-                <Entypo
-                  name={showConfirmPassword ? 'eye-with-line' : 'eye'}
-                  size={25}
-                  color={Colors.black}
-                />
-              </TouchableOpacity>
-            </View>
-          </View>
-          <TouchableOpacity
-            onPress={() => handleRegisteration()}
-            style={{
-              height: 60,
-              width: '90%',
-              justifyContent: 'center',
-              alignItems: 'center',
-              backgroundColor: Colors.buttonBgColor,
-              borderRadius: 10,
-              alignSelf: 'center',
-            }}>
-            {loading ? (
-              <ActivityIndicator color={Colors.white} size={'large'} />
-            ) : (
-              <Text style={{color: 'white', fontSize: 16}}>Sign Up</Text>
-            )}
-          </TouchableOpacity>
-          <View
-            style={{
-              alignItems: 'center',
-              justifyContent: 'center',
-              flexDirection: 'row',
-              marginTop: 20,
-            }}>
-            <Text style={{color: '#181E5B', fontSize: 14}}>
-              Already have an account?{' '}
-            </Text>
 
-            <TouchableOpacity onPress={() => navigation.navigate('emailLogin')}>
-              <Text
-                style={{color: '#181E5B', fontSize: 14, fontWeight: 'bold'}}>
-                {' '}
-                Sign In
-              </Text>
+              <View>
+                <TextInput
+                  secureTextEntry={showPassword}
+                  placeholderTextColor={Colors.black}
+                  onChangeText={changedText =>
+                    onChangeText(changedText, 'password')
+                  }
+                  placeholder="Password"
+                  style={{
+                    height: 50,
+                    width: '100%',
+                    borderRadius: 5,
+                    padding: 10,
+                    borderWidth: 1,
+                    borderColor: 'black',
+                  }}
+                />
+                <TouchableOpacity
+                  onPress={() => setShowPassword(!showPassword)}
+                  style={{
+                    position: 'absolute',
+                    right: 10,
+                    height: '100%',
+                    justifyContent: 'center',
+                  }}>
+                  <Entypo
+                    name={showPassword ? 'eye-with-line' : 'eye'}
+                    size={25}
+                    color={Colors.black}
+                  />
+                </TouchableOpacity>
+              </View>
+              <View>
+                <TextInput
+                  secureTextEntry={showConfirmPassword}
+                  placeholderTextColor={Colors.black}
+                  onChangeText={changedText =>
+                    onChangeText(changedText, 'confirmPassword')
+                  }
+                  placeholder="Confirm Password"
+                  style={{
+                    height: 50,
+                    width: '100%',
+                    borderRadius: 5,
+                    padding: 10,
+                    borderWidth: 1,
+                    borderColor: 'black',
+                  }}
+                />
+                <TouchableOpacity
+                  onPress={() => setShowConfirmPassword(!showConfirmPassword)}
+                  style={{
+                    position: 'absolute',
+                    right: 10,
+                    height: '100%',
+                    justifyContent: 'center',
+                  }}>
+                  <Entypo
+                    name={showConfirmPassword ? 'eye-with-line' : 'eye'}
+                    size={25}
+                    color={Colors.black}
+                  />
+                </TouchableOpacity>
+              </View>
+            </View>
+            <TouchableOpacity
+              onPress={() => handleRegisteration()}
+              style={{
+                height: 60,
+                width: '90%',
+                justifyContent: 'center',
+                alignItems: 'center',
+                backgroundColor: Colors.buttonBgColor,
+                borderRadius: 10,
+                alignSelf: 'center',
+              }}>
+              {loading ? (
+                <ActivityIndicator color={Colors.white} size={'large'} />
+              ) : (
+                <Text style={{color: 'white', fontSize: 16}}>Sign Up</Text>
+              )}
             </TouchableOpacity>
-          </View>
+    
+            <View
+              style={{
+                alignItems: 'center',
+                justifyContent: 'center',
+                flexDirection: 'row',
+                marginTop: 20,
+              }}>
+              <Text style={{color: '#181E5B', fontSize: 14}}>
+                Already have an account?{' '}
+              </Text>
+
+              <TouchableOpacity
+                onPress={() => navigation.navigate('emailLogin')}>
+                <Text
+                  style={{color: '#181E5B', fontSize: 14, fontWeight: 'bold'}}>
+                  {' '}
+                  Sign In
+                </Text>
+              </TouchableOpacity>
+            </View>
+          </ScrollView>
         </View>
-      </ScrollView>
+      </View>
     </ImageBackground>
   );
 };

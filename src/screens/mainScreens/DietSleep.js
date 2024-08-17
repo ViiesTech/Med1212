@@ -9,7 +9,7 @@ const DietSleep = ({ navigation }) => {
 
 
       <Header navigation={navigation}  isChat={false} text={'Diet and Sleep Tracking'} />
-      <ScrollView contentContainerStyle={{ padding: 20, flexGrow: 1 }}>
+      <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ padding: 20, flexGrow: 1 }}>
         <Text style={{ color: Colors.themeColor, fontSize: 20, fontWeight: 600 }}>Tell Us About Your Diet and
         </Text>
         <Text style={{ color: Colors.themeColor, fontSize: 20, fontWeight: 600 }}>Sleep Hours

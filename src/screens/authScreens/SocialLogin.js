@@ -10,7 +10,7 @@ const SocialLogin = ({ navigation }) => {
     return (
 
        <ImageBackground style={{flex:1}} source={images.background}>
-        <ScrollView contentContainerStyle={{ flexGrow: 1, }}>
+        <View  style={{ flex: 1, }}>
             <View style={{padding: 20,}}>
 
                 <TouchableOpacity onPress={() => navigation.goBack()} style={{  alignSelf: 'flex-start',marginTop:5  }}>
@@ -23,8 +23,9 @@ const SocialLogin = ({ navigation }) => {
                 </View>
             </View>
 
-            <View style={{ flex: 1, backgroundColor: '#E6E9FF', borderTopLeftRadius: 50, borderTopRightRadius: 50, marginTop: 30 }}>
-                <View style={{ width: '100%', padding: 20, alignItems: 'center' }}>
+            <View style={{ flex: 1, backgroundColor: '#E6E9FF',  marginTop: 30,borderTopLeftRadius: 50, borderTopRightRadius: 50,paddingTop:10 }}>
+                <ScrollView contentContainerStyle={{ width: '100%', padding: 20, alignItems: 'center' }} showsVerticalScrollIndicator={false}>
+                
                     <Text style={{ marginTop: 20, fontSize: 14 }}>MEDICAL AND GENERAL CARE</Text>
                     <Text style={{ color: '#181E5B', fontSize: 30, marginTop: 10 }}>Be <Text style={{ color: '#181E5B', fontSize: 30, fontWeight: 'bold' }}> Wealthy</Text></Text>
                     <Text style={{ color: '#181E5B', fontSize: 30, marginTop: 10 }}>By being <Text style={{ color: '#181E5B', fontSize: 30, fontWeight: 'bold' }}> Healthy</Text></Text>
@@ -49,9 +50,9 @@ const SocialLogin = ({ navigation }) => {
                             Recover My Account
                         </Text>
                     </View>
-                </View>
+                </ScrollView>
             </View>
-        </ScrollView>
+        </View>
         </ImageBackground>
     )
 }

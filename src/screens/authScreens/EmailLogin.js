@@ -33,7 +33,7 @@ const EmailLogin = ({navigation}) => {
   };
 
   const handleLogin = async () => {
-    navigation.navigate('mainStack')
+    navigation.navigate('mainStack');
     // try {
     //   const response = await emailAuthentication(form.email, form.password,dispatch);
     // } catch (error) {
@@ -42,7 +42,7 @@ const EmailLogin = ({navigation}) => {
   };
   return (
     <ImageBackground style={{flex: 1}} source={images.background}>
-      <ScrollView contentContainerStyle={{flexGrow: 1}}>
+      <View style={{flex: 1}}>
         <View style={{padding: 20}}>
           <TouchableOpacity
             onPress={() => navigation.goBack()}
@@ -68,55 +68,37 @@ const EmailLogin = ({navigation}) => {
             borderTopLeftRadius: 50,
             borderTopRightRadius: 50,
             marginTop: 30,
+            paddingTop:10
           }}>
-          <View style={{width: '100%', padding: 20, alignItems: 'center'}}>
-            <Text style={{marginTop: 20, fontSize: 14}}>
-              MEDICAL AND GENERAL CARE
-            </Text>
-            <Text style={{color: '#181E5B', fontSize: 30, marginTop: 10}}>
-              Be{' '}
-              <Text
-                style={{color: '#181E5B', fontSize: 30, fontWeight: 'bold'}}>
-                {' '}
-                Wealthy
+            
+            <ScrollView contentContainerStyle={{paddingBottom: 10,}} showsVerticalScrollIndicator={false}>
+            <View style={{width: '100%', padding: 20, alignItems: 'center'}}>
+              <Text style={{marginTop: 20, fontSize: 14}}>
+                MEDICAL AND GENERAL CARE
               </Text>
-            </Text>
-            <Text style={{color: '#181E5B', fontSize: 30, marginTop: 10}}>
-              By being{' '}
-              <Text
-                style={{color: '#181E5B', fontSize: 30, fontWeight: 'bold'}}>
-                {' '}
-                Healthy
+              <Text style={{color: '#181E5B', fontSize: 30, marginTop: 10}}>
+                Be{' '}
+                <Text
+                  style={{color: '#181E5B', fontSize: 30, fontWeight: 'bold'}}>
+                  {' '}
+                  Wealthy
+                </Text>
               </Text>
-            </Text>
-          </View>
-          <View style={{padding: 20}}>
-            <TextInput
-              onChangeText={changedText => onChangeText(changedText, 'email')}
-              keyboardType="email-address"
-              placeholderTextColor={Colors.black}
-              placeholder="username or email"
-              style={{
-                height: 50,
-                width: '100%',
-                borderRadius: 5,
-                padding: 10,
-                borderWidth: 1,
-                borderColor: 'black',
-              }}
-            />
-            <TouchableOpacity
-              style={{alignSelf: 'flex-end', marginTop: 10, marginBottom: 15}}>
-              <Text style={{color: '#000'}}>forgot password?</Text>
-            </TouchableOpacity>
-            <View>
+              <Text style={{color: '#181E5B', fontSize: 30, marginTop: 10}}>
+                By being{' '}
+                <Text
+                  style={{color: '#181E5B', fontSize: 30, fontWeight: 'bold'}}>
+                  {' '}
+                  Healthy
+                </Text>
+              </Text>
+            </View>
+            <View style={{padding: 20}}>
               <TextInput
-                onChangeText={changedText =>
-                  onChangeText(changedText, 'password')
-                }
-                secureTextEntry={showPassword}
+                onChangeText={changedText => onChangeText(changedText, 'email')}
+                keyboardType="email-address"
                 placeholderTextColor={Colors.black}
-                placeholder="password"
+                placeholder="username or email"
                 style={{
                   height: 50,
                   width: '100%',
@@ -127,59 +109,85 @@ const EmailLogin = ({navigation}) => {
                 }}
               />
               <TouchableOpacity
-                onPress={() => setShowPassword(!showPassword)}
                 style={{
-                  position: 'absolute',
-                  right: 10,
-                  height: '100%',
-                  justifyContent: 'center',
+                  alignSelf: 'flex-end',
+                  marginTop: 10,
+                  marginBottom: 15,
                 }}>
-                <Entypo
-                  name={showPassword ? 'eye-with-line' : 'eye'}
-                  size={25}
-                  color={Colors.black}
+                <Text style={{color: '#000'}}>forgot password?</Text>
+              </TouchableOpacity>
+              <View>
+                <TextInput
+                  onChangeText={changedText =>
+                    onChangeText(changedText, 'password')
+                  }
+                  secureTextEntry={showPassword}
+                  placeholderTextColor={Colors.black}
+                  placeholder="password"
+                  style={{
+                    height: 50,
+                    width: '100%',
+                    borderRadius: 5,
+                    padding: 10,
+                    borderWidth: 1,
+                    borderColor: 'black',
+                  }}
                 />
+                <TouchableOpacity
+                  onPress={() => setShowPassword(!showPassword)}
+                  style={{
+                    position: 'absolute',
+                    right: 10,
+                    height: '100%',
+                    justifyContent: 'center',
+                  }}>
+                  <Entypo
+                    name={showPassword ? 'eye-with-line' : 'eye'}
+                    size={25}
+                    color={Colors.black}
+                  />
+                </TouchableOpacity>
+              </View>
+            </View>
+            <TouchableOpacity
+              onPress={() => handleLogin()}
+              style={{
+                height: 60,
+                width: '90%',
+                justifyContent: 'center',
+                alignItems: 'center',
+                backgroundColor: Colors.buttonBgColor,
+                borderRadius: 10,
+                alignSelf: 'center',
+              }}>
+              {loading ? (
+                <ActivityIndicator color={Colors.white} size={'large'} />
+              ) : (
+                <Text style={{color: 'white', fontSize: 16}}>Sign In</Text>
+              )}
+            </TouchableOpacity>
+            <View
+              style={{
+                alignItems: 'center',
+                justifyContent: 'center',
+                flexDirection: 'row',
+                marginTop: 20,
+              }}>
+              <Text style={{color: '#181E5B', fontSize: 14}}>
+                Don't have an account?{' '}
+              </Text>
+
+              <TouchableOpacity onPress={() => navigation.navigate('signup')}>
+                <Text
+                  style={{color: '#181E5B', fontSize: 14, fontWeight: 'bold'}}>
+                  {' '}
+                  Register Now
+                </Text>
               </TouchableOpacity>
             </View>
-          </View>
-          <TouchableOpacity
-            onPress={() => handleLogin()}
-            style={{
-              height: 60,
-              width: '90%',
-              justifyContent: 'center',
-              alignItems: 'center',
-              backgroundColor: Colors.buttonBgColor,
-              borderRadius: 10,
-              alignSelf: 'center',
-            }}>
-            {loading ? (
-              <ActivityIndicator color={Colors.white} size={'large'} />
-            ) : (
-              <Text style={{color: 'white', fontSize: 16}}>Sign In</Text>
-            )}
-          </TouchableOpacity>
-          <View
-            style={{
-              alignItems: 'center',
-              justifyContent: 'center',
-              flexDirection: 'row',
-              marginTop: 20,
-            }}>
-            <Text style={{color: '#181E5B', fontSize: 14}}>
-              Don't have an account?{' '}
-            </Text>
-
-            <TouchableOpacity onPress={() => navigation.navigate('signup')}>
-              <Text
-                style={{color: '#181E5B', fontSize: 14, fontWeight: 'bold'}}>
-                {' '}
-                Register Now
-              </Text>
-            </TouchableOpacity>
-          </View>
+          </ScrollView>
         </View>
-      </ScrollView>
+      </View>
     </ImageBackground>
   );
 };

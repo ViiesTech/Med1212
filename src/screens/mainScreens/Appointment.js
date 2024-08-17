@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity } from 'react-native'
+import { View, Text, TouchableOpacity, ScrollView } from 'react-native'
 import React, { useState } from 'react'
 import { Colors } from '../../assets/utils/Colors'
 import Header from '../../component/Header'
@@ -86,7 +86,7 @@ const Appointment = ({ navigation }) => {
 
       <Header navigation={navigation} isChat={true} text={'Make Appointment'} />
 
-      <View style={{ padding: 20 }}>
+      <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ padding: 20 }}>
         <Text style={{ color: '#363636', fontSize: 18, fontWeight: 'bold' }}>April 2020</Text>
         <View style={{ flexDirection: 'row', gap: 10, marginTop: 20 }}>
           {renderDayButton(21, 'Mon')}
@@ -124,7 +124,7 @@ const Appointment = ({ navigation }) => {
         <TouchableOpacity style={{ height: 60, width: 290, justifyContent: "center", alignSelf: 'center', alignItems: 'center', backgroundColor: Colors.buttonBgColor, marginTop: 30, borderRadius: 15 }} onPress={() => navigation.navigate('payment')} >
           <Text style={{ color: 'white', fontSize: 18 }}>Make an Appointment</Text>
         </TouchableOpacity>
-      </View>
+      </ScrollView>
     </View>
   )
 }
