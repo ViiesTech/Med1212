@@ -4,9 +4,13 @@ import { Colors } from '../../assets/utils/Colors'
 import AntDesign from 'react-native-vector-icons/AntDesign'
 import FontAwesome from 'react-native-vector-icons/FontAwesome'
 import { images } from '../../assets/images/AppAssets'
+import { useSelector } from 'react-redux'
 
 const Payment = ({ navigation }) => {
   const [selected, setSelected] = useState(false)
+  const service = useSelector(state => state.user.timeSlot);
+  console.log('service',service)
+
   return (
     <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ backgroundColor: Colors.backgroundColor, flexGrow: 1, padding: 20 }}>
 
